@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"github/grimhat8346/dfs/p2p"
+	"log"
+)
 
-func main () {
-	fmt.Println("We are Gucci!")
+func main() {
+	tr := p2p.NewTCPTransport(":3000")
+	log.Fatal(tr.ListenAndAccept())
+	select {}
+
 }
