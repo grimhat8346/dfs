@@ -1,6 +1,6 @@
 package p2p
 
-// Peer represent the remote nodw and connection
+// Peer represent the remote node and connection
 type Peer interface {
 }
 
