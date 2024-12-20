@@ -72,11 +72,13 @@ func (t *TCPTransport) handleConn(conn net.Conn) {
 		conn.Close()
 		return
 	}
-	msg := &Temp{}
+	msg := &Message{}
 	for {
 		if err := t.Decoder.Decode(conn, msg); err != nil {
 			fmt.Printf("tcp decoder error: %v\n", err)
 			continue
 		}
+
+		fmt.Printf("tcp decoder msg: %+v/n", msg)
 	}
 }
